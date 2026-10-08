@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel de usuarios</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="contenedor">
+    <header class="cabecera">
+      <h1>Panel de usuarios</h1>
+      <p class="subtitulo">Agrega, busca, edita y elimina usuarios sin recargar la página.</p>
+    </header>
+
+    <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+
+    <section class="bloque">
+      <h2 id="titulo-formulario">Nuevo usuario</h2>
+      <form id="formulario" novalidate>
+        <div class="campo">
+          <label for="id">Id</label>
+          <input type="text" id="id" name="id" inputmode="numeric" placeholder="Ej. 11">
+        </div>
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Nombre completo">
+        </div>
+        <div class="campo">
+          <label for="correo">Correo</label>
+          <input type="text" id="correo" name="correo" placeholder="nombre@correo.com">
+        </div>
+        <div class="campo">
+          <label for="ciudad">Ciudad</label>
+          <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad">
+        </div>
+        <div class="acciones-form">
+          <button type="submit" id="btn-enviar" class="btn btn-primario">Agregar</button>
+          <button type="button" id="btn-cancelar" class="btn btn-suave" hidden>Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="bloque">
+      <div class="barra-tabla">
+        <h2>Usuarios <span id="contador" class="contador"></span></h2>
+        <div class="campo campo-busqueda">
+          <label for="buscador">Buscar por nombre</label>
+          <input type="search" id="buscador" placeholder="Escribe para filtrar...">
+        </div>
+      </div>
+
+      <div class="tabla-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Ciudad</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-usuarios"></tbody>
+        </table>
+      </div>
+
+      <p id="resumen-ciudades" class="resumen"></p>
+    </section>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
